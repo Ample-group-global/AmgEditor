@@ -49,7 +49,7 @@ async function build() {
         // 5. Build Library (ESM and CJS)
         console.log('📚 Building Library...');
         const cssContent = fs.readFileSync('dist/public/style.css', 'utf8').replace(/\\/g, '\\\\').replace(/`/g, '\\`');
-        const cssInjection = `
+        const cssInjection = `"use client";
 (function() {
   if (typeof document !== 'undefined') {
     const styleId = 'ample-editor-styles';

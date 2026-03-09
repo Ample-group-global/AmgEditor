@@ -1,3 +1,5 @@
+"use client";
+
 // Import styles
 import "./index.css";
 
