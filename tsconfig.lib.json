@@ -1,0 +1,24 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "outDir": "dist",
+        "rootDir": "client/src",
+        "noEmit": false
+    },
+    "include": [
+        "client/src/index.ts",
+        "client/src/components/**/*",
+        "client/src/lib/**/*",
+        "client/src/hooks/**/*",
+        "client/src/contexts/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "client/src/main.tsx",
+        "client/src/App.tsx",
+        "**/*.test.ts"
+    ]
+}

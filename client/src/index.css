@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", sans-serif;
+  --font-sans--font-feature-settings: normal;
+  --font-sans--font-variation-settings: normal;
+  
+  --font-serif: ui-serif, Georgia, "Times New Roman", Times, serif;
+  --font-serif--font-feature-settings: normal;
+  --font-serif--font-variation-settings: normal;
+  
+  --font-mono: "JetBrains Mono", monospace;
+  --font-mono--font-feature-settings: normal;
+  --font-mono--font-variation-settings: normal;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Swiss International Style / Notion-like Palette */
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* Core Colors */
+  --background: #ffffff;
+  --foreground: #37352f; /* Notion Black */
+
+  --card: #ffffff;
+  --card-foreground: #37352f;
+
+  --popover: #ffffff;
+  --popover-foreground: #37352f;
+
+  --primary: #37352f;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f7f7f5; /* Notion Sidebar/Hover Gray */
+  --secondary-foreground: #37352f;
+
+  --muted: #f7f7f5;
+  --muted-foreground: #9b9a97; /* Notion Gray Text */
+
+  --accent: #f7f7f5;
+  --accent-foreground: #37352f;
+
+  --destructive: #eb5757;
+  --destructive-foreground: #ffffff;
+
+  --border: #e9e9e7; /* Notion Border */
+  --input: #e9e9e7;
+  --ring: #2eaadc; /* Notion Blue Focus */
+
+  --radius: 0.25rem; /* 4px - sharper corners for Swiss style */
+
+  /* Sidebar Specifics */
+  --sidebar: #f7f7f5;
+  --sidebar-foreground: #37352f;
+  --sidebar-primary: #e3e2e0; /* Darker gray for selection */
+  --sidebar-primary-foreground: #37352f;
+  --sidebar-accent: #e3e2e0;
+  --sidebar-accent-foreground: #37352f;
+  --sidebar-border: #e9e9e7;
+  --sidebar-ring: #2eaadc;
+}
+
+.dark {
+  /* Dark Mode Adaptation */
+  --background: #191919; /* Notion Dark Bg */
+  --foreground: #d4d4d4;
+
+  --card: #191919;
+  --card-foreground: #d4d4d4;
+
+  --popover: #202020; /* Slightly lighter for popovers */
+  --popover-foreground: #d4d4d4;
+
+  --primary: #d4d4d4;
+  --primary-foreground: #191919;
+
+  --secondary: #2f2f2f;
+  --secondary-foreground: #d4d4d4;
+
+  --muted: #2f2f2f;
+  --muted-foreground: #9b9a97;
+
+  --accent: #2f2f2f;
+  --accent-foreground: #d4d4d4;
+
+  --destructive: #ff6b6b;
+  --destructive-foreground: #ffffff;
+
+  --border: #373737;
+  --input: #373737;
+  --ring: #2eaadc;
+
+  --sidebar: #202020; /* Notion Dark Sidebar */
+  --sidebar-foreground: #d4d4d4;
+  --sidebar-primary: #2f2f2f;
+  --sidebar-primary-foreground: #d4d4d4;
+  --sidebar-accent: #2f2f2f;
+  --sidebar-accent-foreground: #d4d4d4;
+  --sidebar-border: #373737;
+  --sidebar-ring: #2eaadc;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    letter-spacing: -0.011em;
+  }
+
+  /* Typography Defaults - Professional spacing and sizing */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight text-primary;
+    line-height: 1.3;
+  }
+
+  h1 {
+    @apply text-4xl mb-4;
+    font-weight: 700;
+    letter-spacing: -0.022em;
+  }
+  h2 {
+    @apply text-3xl mb-3;
+    font-weight: 650;
+    letter-spacing: -0.019em;
+  }
+  h3 {
+    @apply text-2xl mb-2;
+    font-weight: 600;
+    letter-spacing: -0.014em;
+  }
+
+  p {
+    @apply leading-7;
+    letter-spacing: -0.011em;
+  }
+
+  code {
+    @apply font-mono text-sm bg-muted px-[0.3rem] py-[0.2rem] rounded-sm;
+  }
+
+  /* Link styling for contentEditable */
+  a {
+    @apply text-blue-600 dark:text-blue-400 no-underline cursor-pointer;
+    @apply hover:text-blue-800 dark:hover:text-blue-300;
+    @apply transition-colors;
+  }
+
+  /* Ensure links are clickable in contentEditable */
+  [contenteditable="true"] a {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Notion-like scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 5px;
+  }
+
+  :hover::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    opacity: 0.5;
+  }
+
+  /* Visible scrollbar for menus */
+  .slash-menu-container ::-webkit-scrollbar,
+  [data-slot="dropdown-menu-content"] ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slash-menu-container ::-webkit-scrollbar-thumb,
+  [data-slot="dropdown-menu-content"] ::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    opacity: 0.4;
+    border-radius: 4px;
+  }
+
+  .slash-menu-container:hover ::-webkit-scrollbar-thumb,
+  [data-slot="dropdown-menu-content"]:hover ::-webkit-scrollbar-thumb {
+    opacity: 0.7;
+  }
+
+  /* Firefox scrollbar */
+  .slash-menu-container,
+  [data-slot="dropdown-menu-content"] {
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted-foreground) transparent;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 100%; /* Full width for wide typing area */
+    }
+  }
+}

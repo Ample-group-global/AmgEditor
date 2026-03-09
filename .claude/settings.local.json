@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm run:*)",
+      "Bash(pnpm install:*)",
+      "Bash(CI=true pnpm install:*)",
+      "Bash(pnpm:*)",
+      "Bash(printf a\\\\n\\\\ny\\\\n:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(netstat:*)"
+    ]
+  }
+}

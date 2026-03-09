@@ -1,0 +1,51 @@
+# Source files
+client/
+server/
+shared/
+src/
+
+# Development files
+*.config.ts
+*.config.js
+vite.config.ts
+vite.lib.config.ts
+tsconfig.json
+tsconfig.node.json
+
+# Build artifacts (keep dist/)
+node_modules/
+dist/public/
+
+# Development
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Documentation
+UNUSED_ITEMS_REPORT.md
+
+# Git
+.git/
+.gitignore
+
+# Package manager
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Misc
+.DS_Store
+*.log
