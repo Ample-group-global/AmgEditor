@@ -35,6 +35,7 @@ async function build() {
         });
 
         fs.copyFileSync('client/index.html', 'dist/public/index.html');
+        fs.copyFileSync('client/public/favicon.ico', 'dist/public/favicon.ico');
 
         // 4. Build Server
         await esbuild.build({
