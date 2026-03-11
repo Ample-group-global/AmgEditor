@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+.npmrc
 .pnpm-debug.log*
 
 # Other lockfiles (force pnpm usage)

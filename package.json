@@ -1,5 +1,5 @@
 {
-    "name": "@amplecapitalglobal/editor",
+    "name": "@amplegroup/editor",
     "version": "1.0.8",
     "type": "module",
     "license": "MIT",
@@ -15,7 +15,7 @@
     "author": "Ample Capital Global",
     "repository": {
         "type": "git",
-        "url": "https://github.com/amplecapitalglobal/editor"
+        "url": "git+https://github.com/amplecapitalglobal/editor.git"
     },
     "main": "./dist/index.cjs",
     "module": "./dist/index.mjs",
